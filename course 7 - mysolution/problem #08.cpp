@@ -87,6 +87,5 @@ int main()
 	printf("%5.2d\n", 5);
 	printf("%5.*d\n", 2, 5);
 	printf("%*.*d\n", 5, 2, 5);
-	cout << setw(5) << "05";
 	*/
 }
