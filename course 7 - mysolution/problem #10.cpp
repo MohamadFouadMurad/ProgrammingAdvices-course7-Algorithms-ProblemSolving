@@ -3,7 +3,6 @@
 #include "MyHeader/MyMathFunction.h"
 
 using namespace std;
-using namespace Helpers;
 using namespace OutPut;
 
 const int ROWS = 3;
