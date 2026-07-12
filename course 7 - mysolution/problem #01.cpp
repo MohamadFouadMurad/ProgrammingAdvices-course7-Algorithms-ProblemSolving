@@ -10,7 +10,7 @@ const int ROWS = 3;
 const int COLS = 3;
 
 
-void FillTwoDimensionArray(int arr[3][3])
+void FillMatrixWithRandomNum(int arr[3][3])
 {
 	for (int i = 0; i < ROWS ; i++)
 	{
@@ -21,7 +21,7 @@ void FillTwoDimensionArray(int arr[3][3])
 	}
 }
 
-void printArray(int arr[3][3])
+void PrintMatrix(int arr[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -41,11 +41,11 @@ int main()
 
 	int arr[ROWS][COLS];
 
-	FillTwoDimensionArray(arr);
+	FillMatrixWithRandomNum(arr);
 
 	cout << "the following is a 3x3 random matrix : " << endl;
 
-	printArray(arr);
+	PrintMatrix(arr);
 
 	return 0;
 }

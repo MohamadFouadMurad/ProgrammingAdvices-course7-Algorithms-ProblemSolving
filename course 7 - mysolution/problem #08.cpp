@@ -8,7 +8,7 @@ using namespace OutPut;
 const int ROWS = 3;
 const int COLS = 3;
 
-void FillTwoDimensionArray(int arr[3][3])
+void FillMatrixWithRandomNum(int arr[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -19,7 +19,7 @@ void FillTwoDimensionArray(int arr[3][3])
 	}
 }
 
-void MultiplyArrays(int arr[3][3], int arr2[3][3] , int arrResult[3][3])
+void MultiplyMatrix(int arr[3][3], int arr2[3][3] , int arrResult[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -30,7 +30,7 @@ void MultiplyArrays(int arr[3][3], int arr2[3][3] , int arrResult[3][3])
 	}
 }
 
-void printArray(int arr[3][3])
+void PrintMatrix(int arr[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -50,29 +50,22 @@ int main()
 
 	int arr[3][3] , arr2[3][3] , arrResult[3][3];
 
-	FillTwoDimensionArray(arr);
+	FillMatrixWithRandomNum(arr);
 	cout << " First array:" << endl;
-	printArray(arr);
+	PrintMatrix(arr);
 
-	FillTwoDimensionArray(arr2);
+	FillMatrixWithRandomNum(arr2);
 	cout << " Second array:" << endl;
-	printArray(arr2);
+	PrintMatrix(arr2);
 
 
 	cout << endl;
 
 
 
-	MultiplyArrays(arr, arr2 , arrResult);
+	MultiplyMatrix(arr, arr2 , arrResult);
 	cout << "Multiply Two Array , the result is:" << endl;
-	printArray(arrResult);
-
-
-
-
-
-
-
+	PrintMatrix(arrResult);
 
 	// printf Formatting types & variations comparison
 	/*

@@ -47,19 +47,52 @@ int SumMatrix(int arr[3][3])
 	return sum;
 }
 
+bool CheckEqualsMatrix(int arr[3][3], int arr2[3][3])
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++) 
+		{
+			if (SumMatrix(arr) == SumMatrix(arr2))
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
 int main()
 {
 	srand((unsigned)time(NULL));
 
-	int arr[3][3];
+	int arr[3][3] , arr2[3][3];
 
-	cout << "the Matrix is : " << endl;
+	cout << "Matrix 1: " << endl;
 
 	FillMatrixWithRandomNum(arr);
 
 	PrintMatrix(arr);
 
-	cout << "sum of Matrix is : " << SumMatrix(arr);
+	cout << endl;
+
+	cout << "Array 2: " << endl;
+
+	FillMatrixWithRandomNum(arr2);
+
+	PrintMatrix(arr2);
+
+	cout << endl;
+
+	if (CheckEqualsMatrix(arr,arr2))
+	{
+		cout << "both Matrices are equals." << endl;
+	}
+	else
+	{
+		cout << "the Matrices are not equals. " << endl;
+	}
 
 	return 0;
 }

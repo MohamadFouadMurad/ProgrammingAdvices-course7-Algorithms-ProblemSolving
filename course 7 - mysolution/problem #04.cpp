@@ -7,7 +7,7 @@ using namespace std;
 using namespace OutPut;
 
 
-void FillTwoDimensionArray(int arr[3][3] , short Rows , short Cols)
+void FillMatrixWithRandomNum(int arr[3][3] , short Rows , short Cols)
 {
 	for (int i = 0; i < Rows; i++)
 	{
@@ -18,7 +18,7 @@ void FillTwoDimensionArray(int arr[3][3] , short Rows , short Cols)
 	}
 }
 
-void printArray(int arr[3][3], short Rows, short Cols)
+void printMatrix(int arr[3][3], short Rows, short Cols)
 {
 	for (int i = 0; i < Rows; i++)
 	{
@@ -43,7 +43,7 @@ int SumCol(int arr[3][3], short Rows, short Cols)
 	return sum;
 }
 
-void SumTwoDimensionArray(int arr[3][3] , short Rows , short Cols)
+void SumColInMatrix(int arr[3][3] , short Rows , short Cols)
 {
 	for (int i = 0; i < Cols; i++)
 	{
@@ -57,15 +57,15 @@ int main()
 
 	int arr[3][3];
 
-	FillTwoDimensionArray(arr,3,3);
+	FillMatrixWithRandomNum(arr,3,3);
 
 	cout << "the following is a 3x3 random matrix : " << endl;
 
-	printArray(arr,3,3);
+	printMatrix(arr,3,3);
 
 	cout << "the following are the sum if each col in the matrix: " << endl;
 
-	SumTwoDimensionArray(arr,3,3);
+	SumColInMatrix(arr,3,3);
 
 	return 0;
 }

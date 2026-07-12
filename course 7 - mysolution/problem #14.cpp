@@ -9,17 +9,6 @@ using namespace OutPut;
 const int ROWS = 3;
 const int COLS = 3;
 
-void FillMatrixWithRandomNum(int arr[3][3])
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			arr[i][j] = RandomNumber(1, 10);
-		}
-	}
-}
-
 void PrintMatrix(int arr[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
@@ -34,32 +23,51 @@ void PrintMatrix(int arr[3][3])
 	}
 }
 
-int SumMatrix(int arr[3][3])
+bool CheckScalarMatrix(int arr[3][3])
 {
-	int sum = 0;
+
+	int FirstDiagonalElement = arr[0][0];
+
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			sum += arr[i][j];
+			if (i == j && arr[i][j] != FirstDiagonalElement)
+			{
+				return false;
+			}
+			else if (i != j && arr[i][j] != 0)
+			{
+				return false;
+			}
 		}
 	}
-	return sum;
+
+
+	return true;
 }
 
 int main()
 {
 	srand((unsigned)time(NULL));
 
-	int arr[3][3];
+	//int arr[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
+	int arr[3][3] = { {10,0,0},{0,10,0},{0,0,10} };
 
-	cout << "the Matrix is : " << endl;
-
-	FillMatrixWithRandomNum(arr);
+	cout << "Matrix 1: " << endl;
 
 	PrintMatrix(arr);
 
-	cout << "sum of Matrix is : " << SumMatrix(arr);
+	cout << endl;
+
+	if (CheckScalarMatrix(arr))
+	{
+		cout << "the Matrices is Scalar" << endl;
+	}
+	else
+	{
+		cout << "the Matrices is not Scalar" << endl;
+	}
 
 	return 0;
 }

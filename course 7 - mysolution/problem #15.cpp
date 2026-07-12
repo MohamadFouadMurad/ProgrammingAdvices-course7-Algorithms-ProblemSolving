@@ -20,35 +20,13 @@ void FillMatrixWithRandomNum(int arr[3][3])
 	}
 }
 
-void PrintMiddleRow(int arr[3][3])
-{
-	short MiddleRow = ROWS / 2;
-
-	for (int j = 0; j < COLS; j++)
-	{
-	printf("%0*d    ", 2, arr[MiddleRow][j]);
-	}
-}
-
-void PrintMiddleCol(int arr[3][3])
-{
-	short MiddleCol = COLS / 2;
-
-	for (int i = 0; i < ROWS; i++)
-	{
-		printf("%0*d    ", 2, arr[i][MiddleCol]);
-	}
-
-	cout << endl;
-}
-
 void PrintMatrix(int arr[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			printf("%0*d    " , 2 , arr[i][j]);
+			printf("%0*d    ", 2, arr[i][j]);
 			Taps(1);
 		}
 
@@ -56,23 +34,43 @@ void PrintMatrix(int arr[3][3])
 	}
 }
 
+int FindNumberInMatrix(int arr[3][3] , int NumberToFind)
+{
+	int counter = 0;
+
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			if (arr[i][j] == NumberToFind)
+			{
+				counter++;
+			}
+		}
+	}
+
+	return counter;
+}
+
 int main()
 {
 	srand((unsigned)time(NULL));
 
 	int arr[3][3];
+	int NumberToFind;
 
 	FillMatrixWithRandomNum(arr);
 
-	cout << "the following is a 3x3 random matrix : " << endl;
+	cout << "Matrix 1: " << endl;
 
 	PrintMatrix(arr);
 
-	cout << "print middle row: " << endl;
+	cout << endl;
 
-	PrintMiddleRow(arr);
+	cout << "please enter the number to count in matrix? ";
+	cin >> NumberToFind;
 
-	cout << "\nprint middle col: " << endl;
+	cout << "Number " << NumberToFind << " count in matrix is " << FindNumberInMatrix(arr,NumberToFind) << endl;
 
-	PrintMiddleCol(arr);
+	return 0;
 }

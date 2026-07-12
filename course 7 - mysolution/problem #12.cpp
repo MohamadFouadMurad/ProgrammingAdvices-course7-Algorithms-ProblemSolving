@@ -34,32 +34,52 @@ void PrintMatrix(int arr[3][3])
 	}
 }
 
-int SumMatrix(int arr[3][3])
+bool CheckTypicalMatrix(int arr[3][3], int arr2[3][3])
 {
-	int sum = 0;
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			sum += arr[i][j];
+			if (arr[i][j] != arr2[i][j])
+			{
+				return false;
+			}
 		}
 	}
-	return sum;
+
+	return true;
 }
 
 int main()
 {
 	srand((unsigned)time(NULL));
 
-	int arr[3][3];
+	int arr[3][3], arr2[3][3];
 
-	cout << "the Matrix is : " << endl;
+	cout << "Matrix 1: " << endl;
 
 	FillMatrixWithRandomNum(arr);
 
 	PrintMatrix(arr);
 
-	cout << "sum of Matrix is : " << SumMatrix(arr);
+	cout << endl;
+
+	cout << "Matrix 2: " << endl;
+
+	FillMatrixWithRandomNum(arr2);
+
+	PrintMatrix(arr2);
+
+	cout << endl;
+
+	if (CheckTypicalMatrix(arr, arr2))
+	{
+		cout << "both Matrices are typical" << endl;
+	}
+	else
+	{
+		cout << "the Matrices are not typical. " << endl;
+	}
 
 	return 0;
 }
