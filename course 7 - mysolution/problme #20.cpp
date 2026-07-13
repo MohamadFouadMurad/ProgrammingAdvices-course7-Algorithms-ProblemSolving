@@ -23,32 +23,28 @@ void PrintMatrix(int Matrix[3][3])
 	}
 }
 
-bool CheckIdentityMatrix(int Matrix[3][3])
+bool IsPalindromeMatrix(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
-		for (int j = 0; j < COLS; j++)
+		for (int j = 0; j < COLS/2; j++)
 		{
-			if ( i == j && Matrix[i][j] != 1)
-			{
-				return false;
-			}
-			else if (i != j && Matrix[i][j] != 0)
+			if (Matrix[i][j] != Matrix[i][COLS - j - 1])
 			{
 				return false;
 			}
 		}
 	}
-
 	return true;
 }
+
 
 int main()
 {
 	srand((unsigned)time(NULL));
 
-	//int Matrix[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
-	int Matrix1[3][3] = { {1,0,0},{0,1,0},{0,0,1} };
+	//int Matrix1[3][3] = { {1,2,1},{5,5,5},{7,3,7} };
+	int Matrix1[3][3] = { {1,2,1},{5,5,5},{7,3,8} };
 
 	cout << "Matrix 1: " << endl;
 
@@ -56,13 +52,13 @@ int main()
 
 	cout << endl;
 
-	if (CheckIdentityMatrix(Matrix1))
+	if (IsPalindromeMatrix(Matrix1))
 	{
-		cout << "the Matrices is identity" << endl;
+		cout << "Matrix is Palindrome." << endl;
 	}
 	else
 	{
-		cout << "the Matrices is not identity" << endl;
+		cout << "Matrix is NOT Palindrome." << endl;
 	}
 
 	return 0;

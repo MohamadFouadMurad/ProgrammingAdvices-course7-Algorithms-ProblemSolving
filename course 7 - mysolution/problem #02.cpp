@@ -10,47 +10,47 @@ const int ROWS = 3;
 const int COLS = 3;
 
 
-void FillMatrixWithRandomNum(int arr[3][3])
+void FillMatrixWithRandomNum(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] = RandomNumber(1, 100);
+			Matrix[i][j] = RandomNumber(1, 100);
 		}
 	}
 }
 
-void PrintMatrix(int arr[3][3])
+void PrintMatrix(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			cout << setw(3) << arr[i][j] << Taps(1);
+			cout << setw(3) << Matrix[i][j] << Taps(1);
 		}
 
 		cout << endl;
 	}
 }
 
-int SumRow(int arr[3][3], short Rows, short Cols)
+int SumRow(int Matrix[3][3], short Rows)
 {
 	int sum = 0;
 
-	for (int j = 0; j < Cols; j++)
+	for (int j = 0; j < COLS; j++)
 	{
-		sum += arr[Rows][j];
+		sum += Matrix[Rows][j];
 	}
 
 	return sum;
 }
 
-void SumTwoDimensionMatrix(int arr[3][3])
+void SumTwoDimensionMatrix(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
-		cout << "Row " << i + 1 << " Sum = " << SumRow(arr, i, COLS) << endl;
+		cout << "Row " << i + 1 << " Sum = " << SumRow(Matrix,i) << endl;
 	} 
 }
 
@@ -59,17 +59,17 @@ int main()
 {
 	srand((unsigned)time(NULL));
 
-	int arr[ROWS][COLS];
+	int Matrix1[ROWS][COLS];
 
-	FillMatrixWithRandomNum(arr);
+	FillMatrixWithRandomNum(Matrix1);
 
 	cout << "the following is a 3x3 random matrix : " << endl;
 
-	PrintMatrix(arr);
+	PrintMatrix(Matrix1);
 
 	cout << "the following are the sum if each row in the matrix: " << endl;
 
-	SumTwoDimensionMatrix(arr);
+	SumTwoDimensionMatrix(Matrix1);
 
 	return 0;
 }

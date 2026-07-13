@@ -9,7 +9,7 @@ using namespace OutPut;
 const int ROWS = 3;
 const int COLS = 3;
 
-void FillMatrixWithRandomNum(int arr[3][3])
+void FillMatrixWithRandomNum(int Matrix[3][3])
 {
 
 	int counter = 0;
@@ -19,29 +19,29 @@ void FillMatrixWithRandomNum(int arr[3][3])
 		for (int j = 0; j < COLS; j++)
 		{
 			counter++;
-			arr[i][j] = counter;
+			Matrix[i][j] = counter;
 		}
 	}
 }
 
-void TransposeMatrix(int arr[3][3] , int arrTranspose[3][3])
+void TransposeMatrix(int Matrix[3][3] , int TransposeMatrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arrTranspose[j][i] = arr[i][j];
+			TransposeMatrix[j][i] = Matrix[i][j];
 		}
 	}
 }
 
-void PrintMatrix(int arr[3][3])
+void PrintMatrix(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			cout << setw(3) << arr[i][j] << Taps(1);
+			cout << setw(3) << Matrix[i][j] << Taps(1);
 		}
 
 		cout << endl;
@@ -52,18 +52,18 @@ int main()
 {
 	srand((unsigned)time(NULL));
 
-	int arr[3][3];
+	int Matrix1[3][3];
 	int TransposeMatr[3][3];
 
-	FillMatrixWithRandomNum(arr);
+	FillMatrixWithRandomNum(Matrix1);
 
 	cout << "the following is a 3x3 random matrix : " << endl;
 
-	PrintMatrix(arr);
+	PrintMatrix(Matrix1);
 
 	cout << "the following is the transposed matrix : " << endl;
 
-	TransposeMatrix(arr, TransposeMatr);
+	TransposeMatrix(Matrix1, TransposeMatr);
 
 
 	PrintMatrix(TransposeMatr);
@@ -75,7 +75,7 @@ int main()
 	{
 		for (int i = 0; i < COLS; i++)
 		{
-			cout << setw(3) << arr[i][j] << " ";
+			cout << setw(3) << Matrix[i][j] << " ";
 		}
 		cout << "\n";
 	}

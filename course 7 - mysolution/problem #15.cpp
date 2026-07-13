@@ -9,24 +9,24 @@ using namespace OutPut;
 const int ROWS = 3;
 const int COLS = 3;
 
-void FillMatrixWithRandomNum(int arr[3][3])
+void FillMatrixWithRandomNum(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] = RandomNumber(1, 10);
+			Matrix[i][j] = RandomNumber(1, 10);
 		}
 	}
 }
 
-void PrintMatrix(int arr[3][3])
+void PrintMatrix(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			printf("%0*d    ", 2, arr[i][j]);
+			printf("%0*d    ", 2, Matrix[i][j]);
 			Taps(1);
 		}
 
@@ -34,7 +34,7 @@ void PrintMatrix(int arr[3][3])
 	}
 }
 
-int FindNumberInMatrix(int arr[3][3] , int NumberToFind)
+int IsNumberInMatrix(int Matrix[3][3] , int NumberToFind)
 {
 	int counter = 0;
 
@@ -42,7 +42,7 @@ int FindNumberInMatrix(int arr[3][3] , int NumberToFind)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			if (arr[i][j] == NumberToFind)
+			if (Matrix[i][j] == NumberToFind)
 			{
 				counter++;
 			}
@@ -56,21 +56,21 @@ int main()
 {
 	srand((unsigned)time(NULL));
 
-	int arr[3][3];
+	int Matrix1[3][3];
 	int NumberToFind;
 
-	FillMatrixWithRandomNum(arr);
+	FillMatrixWithRandomNum(Matrix1);
 
 	cout << "Matrix 1: " << endl;
 
-	PrintMatrix(arr);
+	PrintMatrix(Matrix1);
 
 	cout << endl;
 
 	cout << "please enter the number to count in matrix? ";
 	cin >> NumberToFind;
 
-	cout << "Number " << NumberToFind << " count in matrix is " << FindNumberInMatrix(arr,NumberToFind) << endl;
+	cout << "Number " << NumberToFind << " count in matrix is " << IsNumberInMatrix(Matrix1,NumberToFind) << endl;
 
 	return 0;
 }

@@ -9,24 +9,24 @@ using namespace OutPut;
 const int ROWS = 3;
 const int COLS = 3;
 
-void FillMatrixWithRandomNum(int arr[3][3])
+void FillMatrixWithRandomNum(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] = RandomNumber(1, 10);
+			Matrix[i][j] = RandomNumber(1, 10);
 		}
 	}
 }
 
-void PrintMatrix(int arr[3][3])
+void PrintMatrix(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			printf("%0*d    ", 2, arr[i][j]);
+			printf("%0*d    ", 2, Matrix[i][j]);
 			Taps(1);
 		}
 
@@ -34,26 +34,26 @@ void PrintMatrix(int arr[3][3])
 	}
 }
 
-int SumMatrix(int arr[3][3])
+int SumMatrix(int Matrix[3][3])
 {
 	int sum = 0;
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			sum += arr[i][j];
+			sum += Matrix[i][j];
 		}
 	}
 	return sum;
 }
 
-bool CheckEqualsMatrix(int arr[3][3], int arr2[3][3])
+bool CheckEqualsMatrix(int Matrix1[3][3], int Matrix2[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++) 
 		{
-			if (SumMatrix(arr) == SumMatrix(arr2))
+			if (SumMatrix(Matrix1) == SumMatrix(Matrix2))
 			{
 				return true;
 			}
@@ -67,25 +67,25 @@ int main()
 {
 	srand((unsigned)time(NULL));
 
-	int arr[3][3] , arr2[3][3];
+	int Matrix[3][3] , Matrix2[3][3];
 
 	cout << "Matrix 1: " << endl;
 
-	FillMatrixWithRandomNum(arr);
+	FillMatrixWithRandomNum(Matrix);
 
-	PrintMatrix(arr);
-
-	cout << endl;
-
-	cout << "Array 2: " << endl;
-
-	FillMatrixWithRandomNum(arr2);
-
-	PrintMatrix(arr2);
+	PrintMatrix(Matrix);
 
 	cout << endl;
 
-	if (CheckEqualsMatrix(arr,arr2))
+	cout << "Matrix 2: " << endl;
+
+	FillMatrixWithRandomNum(Matrix2);
+
+	PrintMatrix(Matrix2);
+
+	cout << endl;
+
+	if (CheckEqualsMatrix(Matrix,Matrix2))
 	{
 		cout << "both Matrices are equals." << endl;
 	}

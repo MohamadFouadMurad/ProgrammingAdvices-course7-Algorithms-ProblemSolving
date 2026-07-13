@@ -9,24 +9,24 @@ using namespace OutPut;
 const int ROWS = 3;
 const int COLS = 3;
 
-void FillMatrixWithRandomNum(int arr[3][3])
+void FillMatrixWithRandomNum(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] = RandomNumber(1, 10);
+			Matrix[i][j] = RandomNumber(1, 10);
 		}
 	}
 }
 
-void PrintMatrix(int arr[3][3])
+void PrintMatrix(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			printf("%0*d    ", 2, arr[i][j]);
+			printf("%0*d    ", 2, Matrix[i][j]);
 			Taps(1);
 		}
 
@@ -34,14 +34,14 @@ void PrintMatrix(int arr[3][3])
 	}
 }
 
-int SumMatrix(int arr[3][3])
+int SumMatrix(int Matrix[3][3])
 {
 	int sum = 0;
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			sum += arr[i][j];
+			sum += Matrix[i][j];
 		}
 	}
 	return sum;
@@ -51,15 +51,15 @@ int main()
 {
 	srand((unsigned)time(NULL));
 
-	int arr[3][3];
+	int Matrix1[3][3];
 
 	cout << "the Matrix is : " << endl;
 
-	FillMatrixWithRandomNum(arr);
+	FillMatrixWithRandomNum(Matrix1);
 
-	PrintMatrix(arr);
+	PrintMatrix(Matrix1);
 
-	cout << "sum of Matrix is : " << SumMatrix(arr);
+	cout << "sum of Matrix is : " << SumMatrix(Matrix1);
 
 	return 0;
 }

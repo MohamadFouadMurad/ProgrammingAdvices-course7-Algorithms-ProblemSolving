@@ -9,13 +9,13 @@ using namespace OutPut;
 const int ROWS = 3;
 const int COLS = 3;
 
-void PrintMatrix(int arr[3][3])
+void PrintMatrix(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			printf("%0*d    ", 2, arr[i][j]);
+			printf("%0*d    ", 2, Matrix[i][j]);
 			Taps(1);
 		}
 
@@ -23,20 +23,20 @@ void PrintMatrix(int arr[3][3])
 	}
 }
 
-bool CheckScalarMatrix(int arr[3][3])
+bool CheckScalarMatrix(int Matrix[3][3])
 {
 
-	int FirstDiagonalElement = arr[0][0];
+	int FirstDiagonalElement = Matrix[0][0];
 
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			if (i == j && arr[i][j] != FirstDiagonalElement)
+			if (i == j && Matrix[i][j] != FirstDiagonalElement)
 			{
 				return false;
 			}
-			else if (i != j && arr[i][j] != 0)
+			else if (i != j && Matrix[i][j] != 0)
 			{
 				return false;
 			}
@@ -51,16 +51,16 @@ int main()
 {
 	srand((unsigned)time(NULL));
 
-	//int arr[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
-	int arr[3][3] = { {10,0,0},{0,10,0},{0,0,10} };
+	//int Matrix[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
+	int Matrix1[3][3] = { {10,0,0},{0,10,0},{0,0,10} };
 
 	cout << "Matrix 1: " << endl;
 
-	PrintMatrix(arr);
+	PrintMatrix(Matrix1);
 
 	cout << endl;
 
-	if (CheckScalarMatrix(arr))
+	if (CheckScalarMatrix(Matrix1))
 	{
 		cout << "the Matrices is Scalar" << endl;
 	}

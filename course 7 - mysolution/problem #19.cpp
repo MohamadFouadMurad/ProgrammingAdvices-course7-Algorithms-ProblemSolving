@@ -23,32 +23,37 @@ void PrintMatrix(int Matrix[3][3])
 	}
 }
 
-bool CheckIdentityMatrix(int Matrix[3][3])
+void FindMaxAndMinimumNumberInMatrix(int Matrix[3][3])
 {
+	int MaxNumber = Matrix[0][0];
+	int MinimumNumber = Matrix[0][0];
+
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			if ( i == j && Matrix[i][j] != 1)
+			if (Matrix[i][j] > MaxNumber)
 			{
-				return false;
+				MaxNumber = Matrix[i][j];
 			}
-			else if (i != j && Matrix[i][j] != 0)
+
+			if (Matrix[i][j] < MinimumNumber)
 			{
-				return false;
+				MinimumNumber = Matrix[i][j];
 			}
 		}
 	}
 
-	return true;
+
+	cout << "max Number is : " << MaxNumber << endl;
+	cout << "Minimum Number is : " << MinimumNumber << endl;
 }
 
 int main()
 {
 	srand((unsigned)time(NULL));
 
-	//int Matrix[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
-	int Matrix1[3][3] = { {1,0,0},{0,1,0},{0,0,1} };
+	int Matrix1[3][3] = { {77,5,12},{22,20,6},{14,3,9} };
 
 	cout << "Matrix 1: " << endl;
 
@@ -56,14 +61,7 @@ int main()
 
 	cout << endl;
 
-	if (CheckIdentityMatrix(Matrix1))
-	{
-		cout << "the Matrices is identity" << endl;
-	}
-	else
-	{
-		cout << "the Matrices is not identity" << endl;
-	}
+	FindMaxAndMinimumNumberInMatrix(Matrix1);
 
 	return 0;
 }

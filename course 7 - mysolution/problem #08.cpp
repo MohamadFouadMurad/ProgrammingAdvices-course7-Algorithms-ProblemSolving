@@ -1,3 +1,4 @@
+#include <iostream>
 #include <iomanip>
 #include "MyHeader/MyMathFunction.h"
 
@@ -8,35 +9,35 @@ using namespace OutPut;
 const int ROWS = 3;
 const int COLS = 3;
 
-void FillMatrixWithRandomNum(int arr[3][3])
+void FillMatrixWithRandomNum(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] = RandomNumber(1, 10);
+			Matrix[i][j] = RandomNumber(1, 10);
 		}
 	}
 }
 
-void MultiplyMatrix(int arr[3][3], int arr2[3][3] , int arrResult[3][3])
+void MultiplyMatrix(int Matrix1[3][3], int Matrix2[3][3] , int MatrixResult[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arrResult[i][j] = arr[i][j] * arr2[i][j];
+			MatrixResult[i][j] = Matrix1[i][j] * Matrix2[i][j];
 		}
 	}
 }
 
-void PrintMatrix(int arr[3][3])
+void PrintMatrix(int Matrix[3][3])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			printf(" %.*d", 2, arr[i][j]);
+			printf(" %.*d", 2, Matrix[i][j]);
 			Taps(1);
 		}
 
@@ -48,24 +49,24 @@ int main()
 {
 	srand((unsigned)time(NULL));
 
-	int arr[3][3] , arr2[3][3] , arrResult[3][3];
+	int Matrix1[3][3] , Matrix2[3][3] , MatrixResult[3][3];
 
-	FillMatrixWithRandomNum(arr);
-	cout << " First array:" << endl;
-	PrintMatrix(arr);
+	FillMatrixWithRandomNum(Matrix1);
+	cout << " First Matrix:" << endl;
+	PrintMatrix(Matrix1);
 
-	FillMatrixWithRandomNum(arr2);
-	cout << " Second array:" << endl;
-	PrintMatrix(arr2);
+	FillMatrixWithRandomNum(Matrix2);
+	cout << " Second Matrix:" << endl;
+	PrintMatrix(Matrix2);
 
 
 	cout << endl;
 
 
 
-	MultiplyMatrix(arr, arr2 , arrResult);
-	cout << "Multiply Two Array , the result is:" << endl;
-	PrintMatrix(arrResult);
+	MultiplyMatrix(Matrix1, Matrix2 , MatrixResult);
+	cout << "Multiply Two Matrix , the result is:" << endl;
+	PrintMatrix(MatrixResult);
 
 	// printf Formatting types & variations comparison
 	/*
@@ -81,4 +82,6 @@ int main()
 	printf("%5.*d\n", 2, 5);
 	printf("%*.*d\n", 5, 2, 5);
 	*/
+
+	return 0;
 }

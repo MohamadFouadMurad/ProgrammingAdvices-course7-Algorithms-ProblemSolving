@@ -34,52 +34,51 @@ void PrintMatrix(int Matrix[3][3])
 	}
 }
 
-bool CheckTypicalMatrix(int Matrix1[3][3], int Matrix2[3][3])
+bool IsNumberInMatrix(int Matrix[3][3], int NumberToFind)
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			if (Matrix1[i][j] != Matrix2[i][j])
+			if (Matrix[i][j] == NumberToFind)
 			{
-				return false;
+				return true;
 			}
 		}
 	}
 
-	return true;
+	return false;
 }
 
 int main()
 {
 	srand((unsigned)time(NULL));
 
-	int Matrix1[3][3], Matrix2[3][3];
-
-	cout << "Matrix 1: " << endl;
+	int Matrix1[3][3];
+	int NumberToFind;
 
 	FillMatrixWithRandomNum(Matrix1);
+
+	cout << "Matrix 1: " << endl;
 
 	PrintMatrix(Matrix1);
 
 	cout << endl;
 
-	cout << "Matrix 2: " << endl;
-
-	FillMatrixWithRandomNum(Matrix2);
-
-	PrintMatrix(Matrix2);
+	cout << "please enter the number to count in matrix? ";
+	cin >> NumberToFind;
 
 	cout << endl;
 
-	if (CheckTypicalMatrix(Matrix1, Matrix2))
+	if (IsNumberInMatrix(Matrix1,NumberToFind))
 	{
-		cout << "both Matrices are typical" << endl;
+		cout << "yes it is there." << endl;
 	}
 	else
 	{
-		cout << "the Matrices are not typical. " << endl;
+		cout << "no it's not there." << endl;
 	}
+
 
 	return 0;
 }
