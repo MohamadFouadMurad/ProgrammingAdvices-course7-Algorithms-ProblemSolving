@@ -35,6 +35,7 @@ namespace myfunc
 
 	string ReadFullName(string message)
 	{
+		cout << message;
 		string FullName = "";
 		getline(cin, FullName);
 		return FullName;
