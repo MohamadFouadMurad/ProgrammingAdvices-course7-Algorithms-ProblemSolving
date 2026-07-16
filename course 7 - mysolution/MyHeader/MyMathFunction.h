@@ -247,3 +247,120 @@ namespace Helpers
 	}
 }
 
+namespace String
+{
+
+	string ReadString()
+	{
+		string S1;
+		cout << "Please Enter Your String?\n";
+		getline(cin, S1);
+		return S1;
+	}
+
+	void LowerFirstLettFromEachWord(string Name)
+	{
+		cout << endl;
+
+		int isFirstLetter = true;
+
+		cout << "String After Conversion: " << endl;
+
+		for (int i = 0; i < Name.length(); i++)
+		{
+			if (Name[i] != ' ' && isFirstLetter)
+			{
+				Name[i] = tolower(Name[i]);
+			}
+
+			isFirstLetter = (Name[i] == ' ' ? true : false);
+		}
+
+		cout << Name << endl;
+	}
+
+	void UpperFirstLettFromEachWord(string Name)
+	{
+		cout << endl;
+
+		int isFirstLetter = true;
+
+		cout << "String After Conversion: " << endl;
+
+		for (int i = 0; i < Name.length(); i++)
+		{
+			if (Name[i] != ' ' && isFirstLetter)
+			{
+				Name[i] = toupper(Name[i]);
+			}
+
+			isFirstLetter = (Name[i] == ' ' ? true : false);
+		}
+
+		cout << Name << endl;
+	}
+
+	void LowerAllString(string Name)
+	{
+		for (int i = 0; i < Name.length(); i++)
+		{
+			if (Name[i] != ' ')
+			{
+				Name[i] = tolower(Name[i]);
+			}
+		}
+
+		cout << Name << endl;
+	}
+
+	void UpperAllString(string Name)
+	{
+
+		for (int i = 0; i < Name.length(); i++)
+		{
+			if (Name[i] != ' ')
+			{
+				Name[i] = toupper(Name[i]);
+			}
+		}
+
+		cout << Name << endl;
+	}
+
+	char InvertLetterCase(char Char1)
+	{
+		return isupper(Char1) ? tolower(Char1) : toupper(Char1);
+	}
+	
+	int CountCapitalLetters(string S1)
+	{
+
+		int count = 0;
+
+		for (int i = 0; i < S1.length(); i++)
+		{
+			if (isupper(S1[i]))
+			{
+				count++;
+			}
+		}
+
+		return count;
+	}
+
+	int CountSmallLetters(string S1)
+	{
+		int count = 0;
+
+		for (int i = 0; i < S1.length(); i++)
+		{
+			if (islower(S1[i]))
+			{
+				count++;
+			}
+		}
+
+		return count;
+	}
+
+}
