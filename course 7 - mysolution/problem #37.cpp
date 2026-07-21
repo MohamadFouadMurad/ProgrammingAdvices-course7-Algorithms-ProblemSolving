@@ -1,11 +1,19 @@
 #include <iostream>
 #include <string>
 #include <cctype>
-#include "MyHeader/MyMathFunction.h"
+//#include "MyHeader/MyMathFunction.h"
 #include <vector>
 
 using namespace std;
-using namespace String;
+//using namespace String;
+
+string ReadString()
+{
+	string S1;
+	cout << "Please Enter Your String?\n";
+	getline(cin, S1);
+	return S1;
+}
 
 vector <string> SplitString(string S1, string Delim)
 {

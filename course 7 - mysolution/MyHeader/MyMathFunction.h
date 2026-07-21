@@ -4,6 +4,8 @@
 #include <string>
 #include <cmath>
 #include <iomanip>
+#include <string>
+#include <vector>
 using namespace std;
 
 namespace myfunc
@@ -254,7 +256,7 @@ namespace String
 	{
 		string S1;
 		cout << "Please Enter Your String?\n";
-		getline(cin, S1);
+		getline(cin >> ws, S1);
 		return S1;
 	}
 
@@ -361,6 +363,49 @@ namespace String
 		}
 
 		return count;
+	}
+
+	vector <string> SplitString(string S1, string Delim)
+	{
+		vector <string> vString;
+
+		short pos = 0;
+		string sWord;
+
+		while ((pos = S1.find(Delim)) != std::string::npos)
+		{
+			sWord = S1.substr(0, pos);
+
+			if (sWord != "")
+			{
+				vString.push_back(sWord);
+			}
+
+			S1.erase(0, pos + Delim.length());
+		}
+
+		if (S1 != "")
+		{
+			vString.push_back(S1); // it adds last word of the string.
+		}
+
+		return vString;
+	}
+
+	string JoinString(vector <string>& vString, string delim)
+	{
+		string S1 = "";
+
+		for (string& word : vString)
+		{
+			if (!S1.empty())
+			{
+				S1 += delim;
+			}
+			S1 += word;
+		}
+
+		return S1;
 	}
 
 }

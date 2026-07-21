@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
 #include <cctype>
-#include "MyHeader/MyMathFunction.h"
+//#include "MyHeader/MyMathFunction.h"
 #include <vector>
 
 using namespace std;
-using namespace String;
+//using namespace String;
 
 /*
 string JoinString(vector <string> & vString , string delim)
