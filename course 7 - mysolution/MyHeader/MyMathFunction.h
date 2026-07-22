@@ -301,7 +301,7 @@ namespace String
 
 		cout << Name << endl;
 	}
-
+	/*
 	void LowerAllString(string Name)
 	{
 		for (int i = 0; i < Name.length(); i++)
@@ -314,7 +314,7 @@ namespace String
 
 		cout << Name << endl;
 	}
-
+	*/
 	void UpperAllString(string Name)
 	{
 
@@ -406,6 +406,21 @@ namespace String
 		}
 
 		return S1;
+	}
+
+	string RemovePunctuationsFromString(string S1)
+	{
+		string S2 = "";
+
+		for (int i = 0; i < S1.length(); i++)
+		{
+			if (!ispunct(S1[i]))
+			{
+				S2 += S1[i];
+			}
+		}
+
+		return S2;
 	}
 
 }

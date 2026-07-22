@@ -23,9 +23,10 @@ string ReplaceWordInStringUsingBuiltInFunction(string S1, string StringToReplace
 int main()
 {
 	string S1 = ReadString();
-	string stringToReplace = "foad";
-	string sReplaceTo = "jowad";
+	string stringToReplace = "hello";
+	string sReplaceTo = "hi";
+	cout << endl;
 
-	cout << "String after replace: " << endl;
+	cout << "String after replace: \n" << endl;
 	cout << ReplaceWordInStringUsingBuiltInFunction(S1, stringToReplace, sReplaceTo);
 }
