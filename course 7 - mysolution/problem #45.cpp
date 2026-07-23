@@ -7,7 +7,7 @@
 using namespace std;
 using namespace String;
 
-struct sClint
+struct sClient
 {
 	string AccountNumber = "";
 	string PinCode = "";
@@ -16,9 +16,9 @@ struct sClint
 	int AccountBalance = 0;
 };
 
-sClint ReadClintData()
+sClient ReadClintData()
 {
-	sClint data;
+	sClient data;
 
 	cout << "enter Account Number? ";
 	getline(cin >> ws, data.AccountNumber);
@@ -38,16 +38,15 @@ sClint ReadClintData()
 	return data;
 }
 
-
-string ConvertRecordToLine(sClint Clint , string Seperator)
+string ConvertRecordToLine(sClient Client , string Seperator)
 {
 	string stClintRecord = "";
 
-	stClintRecord += Clint.AccountNumber + Seperator;
-	stClintRecord += Clint.PinCode + Seperator;
-	stClintRecord += Clint.Name +Seperator;
-	stClintRecord += Clint.Phone + Seperator;
-	stClintRecord += to_string(Clint.AccountBalance);
+	stClintRecord += Client.AccountNumber + Seperator;
+	stClintRecord += Client.PinCode + Seperator;
+	stClintRecord += Client.Name +Seperator;
+	stClintRecord += Client.Phone + Seperator;
+	stClintRecord += to_string(Client.AccountBalance);
 
 	return stClintRecord;
 }
@@ -57,10 +56,10 @@ int main()
 {
 	cout << "Please enter Client data : \n\n" << endl;
 
-	sClint Clint;
+	sClient Client;
 
-	Clint = ReadClintData();
+	Client = ReadClintData();
 
 	cout << "\n\nClint Record for saving is : " << endl;
-	cout << ConvertRecordToLine(Clint, "#//#") << endl;
+	cout << ConvertRecordToLine(Client, "#//#") << endl;
 }
