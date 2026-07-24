@@ -158,6 +158,15 @@
     <ClCompile Include="problem #48.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="problem #49.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="problem #50.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="problem #51.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyHeader\MyMathFunction.h">

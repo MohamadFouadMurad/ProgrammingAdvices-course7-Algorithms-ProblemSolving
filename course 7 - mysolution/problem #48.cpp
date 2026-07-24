@@ -21,7 +21,7 @@ struct sClient
 	int AccountBalance = 0;
 };
 
-sClient ConvertLineToRecord(string stLine, string Seperator)
+sClient ConvertLineToRecord(string stLine, string Seperator = "#//#")
 {
 	vector <string> vClientData = SplitString(stLine, Seperator);
 

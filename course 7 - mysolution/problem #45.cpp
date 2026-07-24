@@ -38,7 +38,7 @@ sClient ReadClintData()
 	return data;
 }
 
-string ConvertRecordToLine(sClient Client , string Seperator)
+string ConvertRecordToLine(sClient Client , string Seperator = "#//#")
 {
 	string stClintRecord = "";
 
