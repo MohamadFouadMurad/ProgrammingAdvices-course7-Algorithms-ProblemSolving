@@ -49,9 +49,8 @@ bool CheckSparseMatrix(int Matrix[3][3])
 	return zero > number;
 }
 
-
-
 //Another way
+
 /*
 short CountNumberInMatrix(int Matrix[3][3], int Number)
 {
@@ -78,8 +77,6 @@ bool IsSparseMatrix(int Matrix[3][3])
 */
 
 
-
-
 int main()
 {
 	srand((unsigned)time(NULL));
@@ -103,6 +100,7 @@ int main()
 	}
 
 	//Another  way
+
 	/*
 	if (IsSparseMatrix(Matrix1, 3, 3))
 		cout << "\nYes: It is Sparse\n";
