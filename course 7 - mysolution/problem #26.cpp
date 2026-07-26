@@ -32,7 +32,6 @@ void UpperAllString(string Name)
 }
 
 
-
 int main()
 {
 

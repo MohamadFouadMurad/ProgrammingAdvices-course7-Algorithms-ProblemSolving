@@ -6,7 +6,7 @@
 using namespace std;
 using namespace String;
 
-int countLetterInString(string S1, char Ch1)
+int countLetterInString(string S1, char Ch1 , bool MatchCase = true)
 {
 	int count = 0;
 
@@ -35,7 +35,7 @@ int main()
 
 
 
-	cout << "\nLetter \'" << Ch1 << "\' Count = " << countLetterInString(S1,Ch1) << endl;
+	cout << "\nLetter \'" << Ch1 << "\' Count = " << countLetterInString(S1, Ch1) << endl;
 
 	return 0;
 }

@@ -11,10 +11,8 @@ string ReadFullString(string message)
 	return FullString;
 }
 
-
 void PrintFirstLettFromString(string Name)
 {
-
 	cout << "First letters of this string: " << endl;
 
 
@@ -29,7 +27,6 @@ void PrintFirstLettFromString(string Name)
 		}
 	}
 }
-
 
 //Another way
 /*
