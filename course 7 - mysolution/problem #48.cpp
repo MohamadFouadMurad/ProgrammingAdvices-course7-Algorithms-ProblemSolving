@@ -40,6 +40,7 @@ vector <sClient> LoadDataFromFiles(string FileName)
 {
 	vector <sClient> vClients;
 	fstream Myfile;
+
 	Myfile.open(FileName, ios::in);
 	if (Myfile.is_open())
 	{

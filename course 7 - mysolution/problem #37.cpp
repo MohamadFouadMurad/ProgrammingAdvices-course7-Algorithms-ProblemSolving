@@ -42,7 +42,7 @@ vector <string> SplitString(string S1, string Delim)
 	return vString;
 }
 
-void PrintVectorNumbers(vector <string> vString)
+void PrintVectorNumbers(vector <string> & vString)
 {
 	
 	for (string & i : vString)

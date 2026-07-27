@@ -22,7 +22,7 @@ string ReplaceWordInStringUsingBuiltInFunction(string S1, string StringToReplace
 
 int main()
 {
-	string S1 = ReadString();
+	string S1 = "hrllo , welcome to Saudi arabia , Saudi arabia is nice country";
 	string stringToReplace = "hello";
 	string sReplaceTo = "hi";
 	cout << endl;

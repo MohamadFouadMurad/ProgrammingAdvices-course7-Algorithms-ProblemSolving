@@ -38,7 +38,7 @@ string JoinString(vector <string> & vString, string delim)
 	return S1;
 }
 
-int main()
+int main() 
 {
 	vector <string> vString = { "Mohamd" , "fouad" , "lamia"};
 
