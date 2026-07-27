@@ -71,12 +71,22 @@ namespace myfunc
 		return Number;
 	}
 
-	void SetWidthInCenter(int  Width, string message)
+	void SetWidthInCenter(int Width, string message)
 	{
 		int Length = message.length();
-		int afterspace = (Width - Length) / 2;
-		int beforespace = Width - afterspace;
-		cout << setw(beforespace) << message << setw(afterspace) << "";
+
+		if (Length >= Width)
+		{
+			cout << message;
+			return;
+		}
+
+		int leftSpaces = (Width - Length) / 2;
+		int rightSpaces = Width - Length - leftSpaces;
+
+		cout << string(leftSpaces, ' ');
+		cout << message;
+		cout << string(rightSpaces, ' ');
 	}
 
 }
